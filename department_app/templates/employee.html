@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if employee %}
+        <div class="create-form">
+            <h1>{{ employee.name }}</h1>
+            <h2>Born on: {{ employee.dob }}</h2>
+            <h2>Salary: {{ employee.salary }}</h2>
+            {% for department in departments %}
+                {% if department.id == employee.department_id %}
+                    <h2>Current Department: {{ department.name }}</h2>
+                {% endif %}
+            {% endfor %}
+
+            <form action="" method="post">
+
+                    {{ form.hidden_tag() }}
+                    {{ form.name.label(class='form-control-label') }}
+                    {{ form.name(class='form-control form-control-sm') }}
+                    {{ form.department.label(class='form-control-label') }}
+                    {{ form.department(class='form-control form-control-sm') }}
+                    {{ form.dob.label(class='form-control-label') }}
+                    {{ form.dob(class='form-control form-control-sm') }}
+                    {{ form.salary.label(class='form-control-label') }}
+                    {{ form.salary(class='form-control form-control-sm mb-2') }}
+
+                <div class="btn-submit">
+                    {{ form.submit(class="btn btn-primary mb-2") }}
+                </div>
+            </form>
+            <div class="delete-btn">
+                <button class="btn btn-danger">DELETE</button>
+            </div>
+        </div>
+    {% else %}
+        <h2>Not found</h2>
+    {% endif %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

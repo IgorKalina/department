@@ -1,0 +1,8 @@
+
+.idea
+.coverage
+.pytest_cache/**
+/htmlcov/
+/instance/
+/venv/
+/tests/htmlcov/

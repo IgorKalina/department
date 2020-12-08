@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="stats-block">
+        <h2 class="statistic">Company facts</h2>
+        <div class="stats-single">
+            <div class=" counter stats-number">
+                <span id="departments">5</span>
+            </div>
+            <div class="stats-text">Departments</div>
+        </div>
+        <div class="stats-single">
+            <div class=" counter stats-number">
+                <span id="employees">150</span>
+            </div>
+            <div class="stats-text">Employees</div>
+        </div>
+        <div class="stats-single">
+            <div class=" counter stats-number">
+                <span id="salaries">5000$</span>
+            </div>
+            <div class="stats-text">Average Salary</div>
+        </div>
+
+    </div>
+
+{% endblock %}
+{% block scripts %}
+    <script src="{{ url_for('static', filename='home-script.js') }}"></script>
+{% endblock %}

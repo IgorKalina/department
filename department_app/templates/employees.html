@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="left-50">
+            <div>
+            <h2><a class="btn-lg bg-info" href="{{ url_for('create_employee') }}">Create New Employee</a></h2>
+            </div>
+
+            <div class="display-list">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Salary</th>
+                        <th>Department</th>
+                        <th>Date of Birth</th>
+                    </tr>
+                    {% for employee in employees %}
+                    <tr>
+                        <td><a href="{{ url_for('display_single_employee', _id=employee.id) }}">{{ employee.name }}</a></td>
+                        <td>{{ employee.salary }}</td>
+                        {% for department in departments %}
+                            {% if department.id == employee.department_id %}
+                                <td>{{ department.name }}</td>
+                            {% endif %}
+                        {% endfor %}
+                        <td>{{ employee.dob }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="left-50">
+            <div class="search-form">
+                <form action="" method="post" id="search-f">
+                    {{ form.hidden_tag() }}
+                    {{ form.name.label(class='mb-3 form-control-label') }}
+                    {{ form.name(class='mb-3 form-control form-control-sm') }}
+                    {{ form.date1.label(class=' mb-3 form-control-label') }}
+                    {{ form.date1(class='mb-3 form-control') }}
+
+                    {{ form.date2.label(class=' mb-3 form-control-label') }}
+                    {{ form.date2(class='mb-3 form-control') }}
+
+                    {{ form.department.label(class='form-control-label') }}
+                    {{ form.department(class='mb-3 form-control form-control-sm') }}
+                    {{ form.submit(class="btn btn-primary") }}
+                    <input class="btn btn-danger" type="reset" onclick="reset_form()" value="Clear">
+                </form>
+                <script>
+                    function reset_form() {
+                        document.getElementById('search-f').reset();
+                    }
+                </script>
+            </div>
+            <div class="search-result">
+            <h2>Search results</h2>
+                {% if filtered %}
+                    <ul class="unordered-default">
+                        {% for employee in filtered %}
+                            <li><a href="{{ url_for('display_single_employee', _id=employee.id) }}" >{{ employee.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <h2>Not found</h2>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}

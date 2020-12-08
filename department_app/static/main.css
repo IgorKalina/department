@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+ html, body {
+
+    font-size: 20px;
+    font-family: monospace;
+    font-weight: 20;
+    text-rendering: optimizeLegibility;
+    background-color: #aed6ee;
+
+}
+ body {
+     min-height: 400px;
+     margin-bottom: 240px;
+ }
+
+
+
+/*!*----------------------------------------NAV BAR --------------------------*!*/
+
+
+
+
+.custom-nav {
+    position: sticky;
+    top: 0;
+    background-color: #90b5d4;
+    background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+/*!*----------------------------------------HOME PAGE--------------------------*!*/
+
+.stats-block {
+    height: 300px;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.0));
+    color: #faeeee;
+
+
+}
+
+.statistic {
+    text-align: center;
+    padding-bottom: 40px;
+    font-size: 3.5rem;
+    font-weight: 300;
+}
+
+.counter {
+    font-size: 3.5rem;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.stats-single {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+
+/*!*---------------------------------------- DEPARTMENTS--------------------------*!*/
+
+.create {
+    float: left;
+    padding: 5%;
+    width: 35%;
+}
+
+
+.departments-table {
+    font-size: 120%;
+    margin-left: 10%;
+    float: left;
+    padding: 5%;
+    width: 50%;
+}
+
+.create-head {
+    margin-bottom: 30px;
+}
+
+.unordered-default {
+    list-style-type: none;
+}
+
+ li {
+    margin: 10px;
+    font-size: 150%;
+}
+
+th, td {
+    text-align: center;
+    padding: 30px 15px;
+}
+
+th {
+    text-align: left;
+}
+
+tr:not(:first-child):hover {
+    background-color: white;
+}
+
+#empl-name {
+    text-align: left;
+}
+/*!*---------------------------------------- SINGLE DEPARTMENT--------------------------*!*/
+
+.single-department {
+    width: 100%;
+    text-align: center;
+}
+
+.members {
+    width: 100%;
+}
+
+.members table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*!*---------------------------------------- EMPLOYEES--------------------------*!*/
+
+
+
+.left-50 {
+    padding: 5%;
+    width: 50%;
+    float: left;
+}
+
+.search-form {
+    width: 40%;
+    float: left;
+}
+
+.search-result {
+    float: right;
+}
+
+.search-result li:hover {
+    background-color: white;
+}
+
+.display-list {
+    overflow: scroll;
+    height: 450px;
+}
+/*!*---------------------------------------- CREATE EMPLOYEES--------------------------*!*/
+
+.create-form {
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+
+/*!*---------------------------------------- FOOTER--------------------------*!*/
+
+.shark-image {
+    width: 70px;
+    height: 70px;
+}
+
+.social-footer {
+    height: 240px;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.9));
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+.address {
+    float: left;
+    width: 50%;
+}
+.footer-media {
+    float: right;
+}
+
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 75px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}

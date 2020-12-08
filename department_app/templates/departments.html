@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section>
+        <div class="create">
+            <h2 class="create-head">Create new department</h2>
+            <form action="" method="post" id="create-f">
+                {{ form.hidden_tag() }}
+                {{ form.name.label(class='mb-3 form-control-label') }}
+                {{ form.name(class='mb-3 form-control form-control-sm') }}
+                {{ form.submit(class="btn btn-primary")  }}
+                <input class="btn btn-danger" type="reset" onclick="reset_form()" value="Clear">
+            </form>
+            <script>
+                    function reset_form() {
+                        document.getElementById('create-f').reset();
+                    }
+                </script>
+        </div>
+    </section>
+    <section>
+        <div class=" departments-table align-content-center">
+            <h1>List of Departments</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Average Salary</th>
+                    <th>Number of Employees</th>
+                </tr>
+                {% for department in departments %}
+                <tr>
+                    <td id="empl-name"><a href="{{ url_for('display_single_department', _id=department.id) }}">{{ department.name }}</a></td>
+                    <td>{{ department.average_salary }}</td>
+                    <td>{{ department.num_of_employees }}</td>
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

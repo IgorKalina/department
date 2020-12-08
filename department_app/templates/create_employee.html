@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+
+    </div>
+    <div class="create-form">
+        <h1>Create a new Employee</h1>
+        <form action="" method="post" id="create-f">
+
+                {{ form.hidden_tag() }}
+                {{ form.name.label(class='form-control-label') }}
+                {{ form.name(class='form-control form-control-sm') }}
+                {{ form.department.label(class='form-control-label') }}
+                {{ form.department(class='form-control form-control-sm') }}
+                {{ form.dob.label(class='form-control-label') }}
+                {{ form.dob(class='form-control form-control-sm') }}
+                {{ form.salary.label(class='form-control-label') }}
+                {{ form.salary(class='form-control form-control-sm mb-2') }}
+                {{ form.submit(class="btn btn-primary") }}
+                <input class="btn btn-danger" type="reset" onclick="reset_form()" value="Clear">
+        </form>
+        <script>
+            function reset_form() {
+                document.getElementById('search-f').reset();
+            }
+        </script>
+    </div>
+{% endblock %}
